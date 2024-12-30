@@ -1,0 +1,14 @@
+name: Hallo, Welt
+
+on: 
+  push:
+    branches:
+      - main
+      - 'feat/**'
+
+jobs:
+  greet: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the world
+        run: echo 'Hello, world'
