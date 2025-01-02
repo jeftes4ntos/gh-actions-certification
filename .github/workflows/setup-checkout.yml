@@ -14,4 +14,9 @@ jobs:
       
       - name: Read readme.md
         run: cat README.md 
+
+      - name: Execute multiline commands
+        run: |
+          echo "hello world"
+          cowsay -f dragon "run for your lives" | echo
   
