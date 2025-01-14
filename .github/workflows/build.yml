@@ -47,6 +47,9 @@ jobs:
       with:
         name: TestResults ${{ matrix.node_version }}.${{ matrix.operating_systems }}'
         path: ./test-results.${{ matrix.node_version }}.${{ matrix.operating_systems }}'.xml
+        
+    - name: Show dev env value
+      run: echo ${{ vars.ENV_MESSAGE }}
 
   message-dev:
     name: Message from dev
