@@ -16,7 +16,16 @@ env:
 
 jobs:
   unit-testing:
+    name: Unit testing
+    strategy:
+      matrix: 
+        node_version: [18, 19, 20]
+        operating_systems: [ubuntu-latest, macos-latest]
+        exclude:
+        - node_version: 18
+          operating_system: macos-latest
     runs-on: ubuntu-22.04
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
