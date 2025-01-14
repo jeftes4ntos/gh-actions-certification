@@ -1,0 +1,28 @@
+# copilot: disable
+
+name: Unit testing
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    - 'feat/*'
+
+jobs:
+  unit-testing:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run unit tests
+      run: npm test

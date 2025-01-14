@@ -15,6 +15,9 @@ jobs:
       - name: Read readme.md
         run: cat README.md 
 
+  multiline_commands:
+    runs-on: ubuntu-latest
+    steps:
       - name: Execute multiline commands
         run: |
           echo "hello world"
