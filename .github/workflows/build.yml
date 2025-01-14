@@ -24,8 +24,7 @@ jobs:
         exclude:
         - node_version: 18
           operating_systems: macos-latest
-    runs-on: ubuntu-22.04
-
+    runs-on: ${{ matrix.operating_systems }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -33,7 +32,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '${{ matrix.node_version }}'
 
     - name: Install dependencies
       run: npm install
@@ -42,7 +41,7 @@ jobs:
       run: npm test
 
     - name: Publish test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: TestResults
-        path: ./test-results.xml
+        name: TestResults ${{ matrix.node_version }}.${{ matrix.operating_systems }}'
+        path: ./test-results.${{ matrix.node_version }}.${{ matrix.operating_systems }}'.xml
