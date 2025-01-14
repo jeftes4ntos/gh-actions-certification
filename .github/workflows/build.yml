@@ -23,7 +23,7 @@ jobs:
         operating_systems: [ubuntu-latest, macos-latest]
         exclude:
         - node_version: 18
-          operating_system: macos-latest
+          operating_systems: macos-latest
     runs-on: ubuntu-22.04
 
     steps:
