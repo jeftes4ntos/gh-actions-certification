@@ -42,7 +42,7 @@ jobs:
       run: npm test
 
     - name: Publish test results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: TestResults
         path: ./test-results.xml
