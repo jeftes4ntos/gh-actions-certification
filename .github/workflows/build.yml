@@ -49,21 +49,21 @@ jobs:
         path: ./test-results.${{ matrix.node_version }}.${{ matrix.operating_systems }}'.xml
 
   message-dev:
-      name: Message from dev
-      env:
-        name: dev
-      runs-on: ubuntu-22.04
+    name: Message from dev
+    env:
+      name: dev
+    runs-on: ubuntu-22.04
 
-      steps:
-        - name: Show dev env value
-          run: echo ${{ vars.ENV_MESSAGE }}
+    steps:
+    - name: Show dev env value
+      run: echo ${{ vars.ENV_MESSAGE }}
 
   message-prod:
-            name: Message from prod
-            env:
-              name: prod
-            runs-on: ubuntu-22.04
+    name: Message from prod
+    env:
+      name: prod
+    runs-on: ubuntu-22.04
       
-            steps:
-              - name: Show prod env value
-                run: echo ${{ vars.ENV_MESSAGE }}
+    steps:
+    - name: Show prod env value
+      run: echo ${{ vars.ENV_MESSAGE }}
